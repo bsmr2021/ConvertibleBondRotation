@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b37b177-418b-4c56-95ad-97a0430272e9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ConvertibleBondRotation_jar/ConvertibleBondRotation.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ConvertibleBondRotation_jar/ConvertibleBondRotation.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ConvertibleBondRotation_jar/可转债轮动.xls" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ConvertibleBondRotation_jar/可转债轮动.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConvertibleBondRotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConvertibleBondRotation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/可转债轮动.xls" beforeDir="false" afterPath="$PROJECT_DIR$/可转债轮动.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/低溢价.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/低溢价.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
