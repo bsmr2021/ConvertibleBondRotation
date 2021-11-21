@@ -52,11 +52,13 @@ public class ConvertibleBondRotation {
     }
 
     public ConvertibleBondRotation() throws BiffException, IOException, WriteException {
-        textArea1.setText("1.下载jadk：https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.exe\n" +
+        textArea1.setText("请务必按照下面的操作步骤来执行：\n" +
+                "1.下载jadk：https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.exe\n" +
                 "2.下载GitHub里ConvertibleBondRotation\\out\\artifacts\\ConvertibleBondRotation_jar。\n" +
                 "3.获取低溢价可转债排名、双低可转债排名并粘贴到《可转债轮动.xls》。\n" +
                 "4.从券商下载最新的持仓并粘贴到《可转债轮动.xls》。\n" +
-                "5.双击执行ConvertibleBondRotation.jar，点击相应按钮即可得到需要轮动的结果。");
+                "5.关闭《可转债轮动.xls》！\n" +
+                "6.双击执行ConvertibleBondRotation.jar，点击相应按钮即可得到需要轮动的结果。");
 
         com.company.ExcelTools excelTools = new com.company.ExcelTools();
         //先删除我的低溢价可转债持仓的其他品种，只保留可转债
