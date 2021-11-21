@@ -1,6 +1,6 @@
 请务必按照下面的操作步骤来执行：
 
-1.下载jadk：https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.exe
+1.下载jdk：https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.exe
 
 2.下载GitHub里ConvertibleBondRotation\out\artifacts\ConvertibleBondRotation_jar。
 

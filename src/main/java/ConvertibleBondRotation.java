@@ -53,7 +53,7 @@ public class ConvertibleBondRotation {
 
     public ConvertibleBondRotation() throws BiffException, IOException, WriteException {
         textArea1.setText("请务必按照下面的操作步骤来执行：\n" +
-                "1.下载jadk：https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.exe\n" +
+                "1.下载jdk：https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.exe\n" +
                 "2.下载GitHub里ConvertibleBondRotation\\out\\artifacts\\ConvertibleBondRotation_jar。\n" +
                 "3.获取低溢价可转债排名、双低可转债排名并粘贴到《可转债轮动.xls》。\n" +
                 "4.从券商下载最新的持仓并粘贴到《可转债轮动.xls》。\n" +
