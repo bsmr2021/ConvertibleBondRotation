@@ -20,18 +20,19 @@ public class ConvertibleBondRotation {
     private JButton VipNotbuy;
     private JScrollPane JScrollPane1;
     private JTextArea textArea1;
-    // 我目前持有的低溢价可转债列表
-    String[][] strMyLowPremium = new String[100][2];
-    // 最新低溢价可转债列表
-    String[][] strLastestLowPremium = new String[500][2];
-    // 上次的VIP可转债列表
-    String[][] strVipOld = new String[100][2];
-    // 最新的VIP可转债列表
-    String[][] strVipNew = new String[100][2];
-    // 我目前持有的双低可转债列表
-    String[][] strMyDoubleLow = new String[100][2];
-    // 最新双低可转债列表
-    String[][] strLastestDoubleLow = new String[500][2];
+    // 我目前持有的低溢价可转债列表:id,name,price
+    String[][] strMyLowPremium = new String[100][3];
+    // 最新低溢价可转债列表:id,name,price
+    String[][] strLastestLowPremium = new String[500][3];
+    // 上次的VIP可转债列表:id,name,price
+    String[][] strVipOld = new String[100][3];
+    // 最新的VIP可转债列表:id,name,price
+    String[][] strVipNew = new String[100][3];
+    // 我目前持有的双低可转债列表:id,name,price
+    String[][] strMyDoubleLow = new String[100][3];
+    // 最新双低可转债列表:id,name,price
+    String[][] strLastestDoubleLow = new String[500][3];
+
     StringBuffer stringBuffer = new StringBuffer();
 
     public static void main(String[] args) throws BiffException, IOException, WriteException {
@@ -60,27 +61,29 @@ public class ConvertibleBondRotation {
                 "5.关闭《可转债轮动.xls》！\n" +
                 "6.双击执行ConvertibleBondRotation.jar，点击相应按钮即可得到需要轮动的结果。");
 
+//        JPanel4.setVisible(false);
+
         com.company.ExcelTools excelTools = new com.company.ExcelTools();
         //先删除我的低溢价可转债持仓的其他品种，只保留可转债
-        String[][] strMyTemp = new String[100][2];
-        excelTools.readExcel(strMyTemp, "我的低溢价可转债持仓", 1, 0, 2);
+        String[][] strMyTemp = new String[100][3];
+        excelTools.readExcel(strMyTemp, "我的低溢价可转债持仓", 1, 0, 3);
         excelTools.DeleteNotConvertibleBond(strMyTemp);
         //然后得到了纯粹的可转债持仓列表
-        excelTools.readExcel(strMyLowPremium, "我的低溢价可转债持仓",  1, 0, 2);
-        //excelTools.PrintData(strMyLowPremium, "最终strMy", 0 , strMyLowPremium.length, 0, 2);
+        excelTools.readExcel(strMyLowPremium, "我的低溢价可转债持仓",  1, 0, 3);
+        //excelTools.PrintArrayList(strMyLowPremium, "最终strMy", 0 , strMyLowPremium.length, 0, 3);
 
-        excelTools.readExcel(strLastestLowPremium, "最新低溢价可转债排名",  1, 0, 2);
-        //excelTools.PrintData(strLastestLowPremium, "strLastestLowPremium", 0 , strLastestLowPremium.length, 0, 2);
+        excelTools.readExcel(strLastestLowPremium, "最新低溢价可转债排名",  1, 0, 3);
+        //excelTools.PrintArrayList(strLastestLowPremium, "strLastestLowPremium", 0 , strLastestLowPremium.length, 0, 3);
 
-        excelTools.readExcel(strVipOld, "VIP轮动old",  1, 0, 2);
-        //excelTools.PrintData(strVipOld, "strVipOld", 0 , strVipOld.length, 0, 2);
-        excelTools.readExcel(strVipNew, "VIP轮动new",  1, 0, 2);
-        //excelTools.PrintData(strVipNew, "strVipNew", 0 , strVipNew.length, 0, 2);
+        excelTools.readExcel(strVipOld, "VIP轮动old",  1, 0, 3);
+        //excelTools.PrintArrayList(strVipOld, "strVipOld", 0 , strVipOld.length, 0, 3);
+        excelTools.readExcel(strVipNew, "VIP轮动new",  1, 0, 3);
+        //excelTools.PrintArrayList(strVipNew, "strVipNew", 0 , strVipNew.length, 0, 3);
 
-        excelTools.readExcel(strMyDoubleLow, "我的双低可转债持仓",  1, 0, 2);
-        //excelTools.PrintData(strMyDoubleLow, "strMyDoubleLow", 0 , strMyDoubleLow.length, 0, 2);
-        excelTools.readExcel(strLastestDoubleLow, "最新双低可转债排名",  2, 0, 2);
-        //excelTools.PrintData(strLastestDoubleLow, "strLastestDoubleLow", 0 , strLastestDoubleLow.length, 0, 2);
+        excelTools.readExcel(strMyDoubleLow, "我的双低可转债持仓",  1, 0, 3);
+        //excelTools.PrintArrayList(strMyDoubleLow, "strMyDoubleLow", 0 , strMyDoubleLow.length, 0, 3);
+        excelTools.readExcel(strLastestDoubleLow, "最新双低可转债排名",  2, 0, 3);
+        //excelTools.PrintArrayList(strLastestDoubleLow, "strLastestDoubleLow", 0 , strLastestDoubleLow.length, 0, 3);
 
         LowPremiumRank.addActionListener(new ActionListener() {
             @Override
@@ -122,10 +125,9 @@ public class ConvertibleBondRotation {
                                 }
                             }
                         }
-                        if (isExist != 0) {
-                            //PrintString("最新低溢价可转债排名前50已买:" + strLastestLowPremium[i][1]+ "["+row+"]");
-                        } else {
-                            PrintString(strLastestLowPremium[i][0] + strLastestLowPremium[i][1] + "未买，排名:" + row);
+                        if (isExist == 0) {
+                            PrintString(strLastestLowPremium[i][0] + "~" + strLastestLowPremium[i][1] + "~现价("
+                                    + strLastestLowPremium[i][2] + ")~~~未买，排名:" + row);
                         }
                     }
                 }
@@ -172,10 +174,9 @@ public class ConvertibleBondRotation {
                                 }
                             }
                         }
-                        if (isExist != 0) {
-                            //PrintString("最新双低可转债排名前50已买:" + strLastestDoubleLow[i][1]+ "["+row+"]");
-                        } else {
-                            PrintString(strLastestDoubleLow[i][0] + strLastestDoubleLow[i][1] + "未买，排名:" + row);
+                        if (isExist == 0) {
+                            PrintString(strLastestDoubleLow[i][0] + "~" + strLastestDoubleLow[i][1] + "~现价("
+                                    + strLastestDoubleLow[i][2] + ")~~~未买，排名:" + row);
                         }
                     }
                 }
@@ -195,7 +196,7 @@ public class ConvertibleBondRotation {
                             if (strVipNew[j][1] != null) {
                                 if (strMyLowPremium[i][0].contains(strVipNew[j][0]))
                                 {
-                                    rank = j+1;
+                                    rank = j;
                                 }
                             }
                         }
@@ -223,10 +224,9 @@ public class ConvertibleBondRotation {
                                 }
                             }
                         }
-                        if (isExist != 0) {
-                            //PrintString("VIP轮动前50已买:" + strVipNew[i][1]+ "["+i+"]");
-                        } else {
-                            PrintString(strVipNew[i][0] + strVipNew[i][1] + "未买，排名:" + i);
+                        if (isExist == 0) {
+                            PrintString(strVipNew[i][0] + "~" + strVipNew[i][1] + "~现价("
+                                    + strVipNew[i][2] + ")~~~未买，排名:" + i);
                         }
                     }
                 }
